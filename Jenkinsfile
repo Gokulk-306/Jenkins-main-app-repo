@@ -1,12 +1,23 @@
 @Library('my-shared-lib') _
 pipeline {
     agent any
-
     stages {
-        stage('Greeting') {
+        stage('Deploy') {
             steps {
-                helloWorld('Gokul')
+                deployApp(appName: 'MyService', env: 'staging')
             }
         }
     }
 }
+
+// pipeline {
+//     agent any
+
+//     stages {
+//         stage('Greeting') {
+//             steps {
+//                 helloWorld('Divya')
+//             }
+//         }
+//     }
+// }
